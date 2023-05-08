@@ -42,6 +42,8 @@ library(randomForest)
 # Simulate the data #####################################################################################################################################################################################################################
 set.seed(11112)
 simulation_data_aligned <- sim_marginal_structural_cox(subjects = 1000, tpoints = 100, psiA1 = -.5, psiA2 = -.3, n = 1)
+# simulation_data_aligned <- sim_marginal_structural_cox(subjects = 500, tpoints = 100, psiA1 = -.5, psiA2 = -.3, n = 1)
+# simulation_data_aligned <- sim_marginal_structural_cox(subjects = 250, tpoints = 100, psiA1 = -.5, psiA2 = -.3, n = 1)
 # Randomly select a varying number of observations for each individual to create a “ragged” longitudinal dataset
 simulation_data_ragged <- simulation_data_aligned %>% 
   filter(time != 0) %>% 
@@ -103,6 +105,8 @@ result_250_repetitions_JMSSM_CT_RRF_TV_forest_weight_with_smooth <- NULL
 for (i in 1:250){
   set.seed(11112)
   simulation_data_aligned <- sim_marginal_structural_cox(subjects = 1000, tpoints = 100, psiA1 = -.5, psiA2 = -.3, n = 1)
+  # simulation_data_aligned <- sim_marginal_structural_cox(subjects = 500, tpoints = 100, psiA1 = -.5, psiA2 = -.3, n = 1)
+  # simulation_data_aligned <- sim_marginal_structural_cox(subjects = 250, tpoints = 100, psiA1 = -.5, psiA2 = -.3, n = 1)
   # Randomly select a varying number of observations for each individual to create a “ragged” longitudinal dataset
   simulation_data_ragged <- simulation_data_aligned %>% 
     filter(time != 0) %>% 
